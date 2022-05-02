@@ -1,4 +1,9 @@
+// Problems Link: https://www.codechef.com/practice?page=0&limit=20&sort_by=difficulty_rating&sort_order=asc&search=&start_rating=0&end_rating=999&topic=Basic+Programming&tags=&group=all
+
 /**
+ *                          Problem 1
+ * 
+ *                      Pass or Fail Problem
  *
  * The test has a total of N question, each question carries 3
  * marks for a correct answer and −1 for an incorrect answer. 
@@ -20,7 +25,7 @@
  */
 
 const readline = require("readline-sync");
-const { validateInputs,bmiChecker } = require("./helpers/utils")
+const { validateInputs, bmiChecker } = require("./helpers/utils")
 
 const testCase = Number(readline.question(`Please enter number of testcases to run: `))
 
@@ -73,3 +78,48 @@ for (let start = 0; start < testCase; start++) {
     const mass = Number(readline.question("Provide your mass (in kilograms): "))
     bmiChecker(height, mass)
 }
+
+
+/**
+ * ================================================================================================================================
+ * 
+ *                                      Problem 3
+ *                                   Good Weather Problem
+ * 
+ * The weather report of Chefland is Good if the number of sunny days in a week is strictly greater than the number of rainy days.
+ * Given 7 integers A1,A2,A3,A4,A5,A6,A7 where Ai=1 denotes that the ith day of week in Chefland is a sunny day, Ai=0 denotes that 
+ * the ith day in Chefland is a rainy day. Determine if the weather report of Chefland is Good or not.
+ * 
+ * 
+ * 1≤T≤20 
+ * 0≤Ai≤1
+ * 
+ * Consider:
+ * s = sunny days
+ * r = rainy days
+ * 
+ * 1 week = 7 days
+ * Ai = 1 (s)
+ * Ai = 0 (r)
+ * 
+ * 1 0 1 0 1 1 0
+ * 0 1 1 1 0 1 0
+ * 1 1 1 1 1 0 0
+ * 
+ * ================================================================================================================================
+ * 
+ */
+const startTime = Date.now()
+for (let start = 0; start < testCase; start++) {
+    const weekWeatherReport = readline.question("Provide weather of a week.(1 = sunny, 0 = rainy): ")
+    const weatherReport = weekWeatherReport.split(" ")
+    const sunnyWeather = weatherReport.filter((w) => w === '1').length
+    const rainyWeather = weatherReport.filter(w => w === '0').length
+
+    if (sunnyWeather > rainyWeather)
+        console.log("YES");
+    else
+        console.log("NO");
+}
+const endTime = Date.now()
+console.log(`Problem 3: Time taken ${(endTime - startTime) / 1000}`);

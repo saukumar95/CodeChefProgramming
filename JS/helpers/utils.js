@@ -12,6 +12,19 @@ const validateInputs = (obj) => {
     }
 }
 
+/**
+ * This method takes height and mass from user and apply the bmi formulae 
+ * to calculate the user's bmi and categories them under 4 categories
+ * 
+ * Category 1: Underweight
+ * Category 2: Normal weight
+ * Category 3: Overweight
+ * Category 4: Obescity
+ * 
+ * @param {Number} height 
+ * @param {Number} mass 
+ * @returns {void}
+ */
 const bmiChecker = (height, mass) => {
     const bmi = mass / (height * height)
     if (bmi >= 30)
