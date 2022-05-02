@@ -20,7 +20,9 @@
  */
 
 const readline = require("readline-sync");
-const { validateInputs } = require("./helpers/utils")
+const { validateInputs,bmiChecker } = require("./helpers/utils")
+
+const testCase = Number(readline.question(`Please enter number of testcases to run: `))
 
 const passOrFail = (n = 4, x = 0, p = 0) => {
     const isValid = validateInputs({
@@ -41,9 +43,6 @@ const passOrFail = (n = 4, x = 0, p = 0) => {
 
 }
 
-
-const testCase = Number(readline.question(`Please enter number of testcases to run: `))
-
 for (let i = 0; i < testCase; i++) {
     const numberOfQuestions = readline.question(`Please enter number of questions: `)
     const correctAnswers = readline.question(`Please enter number of correct answers: `)
@@ -58,7 +57,7 @@ for (let i = 0; i < testCase; i++) {
  *                                   Body Mass Index
  * 
  * You are given the height H (in metres) and mass M (in kilograms) of Chef. 
- * The Body Mass Index (BMI) of a person is computed as MH2.
+ * The Body Mass Index (BMI) of a person is computed as M/H^2.
  * Report the category into which Chef falls, based on his BMI:
  * Category 1: Underweight if BMI ≤18
  * Category 2: Normal weight if BMI ∈{19, 20,…, 24}
@@ -69,3 +68,8 @@ for (let i = 0; i < testCase; i++) {
  * ================================================================================================================================
  * 
  */
+for (let start = 0; start < testCase; start++) {
+    const height = Number(readline.question("Provide your height(in meters): "))
+    const mass = Number(readline.question("Provide your mass (in kilograms): "))
+    bmiChecker(height, mass)
+}

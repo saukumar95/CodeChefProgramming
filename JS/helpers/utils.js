@@ -12,6 +12,19 @@ const validateInputs = (obj) => {
     }
 }
 
+const bmiChecker = (height, mass) => {
+    const bmi = mass / (height * height)
+    if (bmi >= 30)
+        console.log("Category 4")
+    else if (bmi >= 25 && bmi <= 29)
+        console.log("Category 3");
+    else if (bmi >= 19 && bmi <= 24)
+        console.log("Category 2");
+    else
+        console.log("Category 1");
+}
+
 module.exports = {
-    validateInputs
+    validateInputs,
+    bmiChecker
 }
