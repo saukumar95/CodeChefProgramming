@@ -6,7 +6,8 @@ const { goodWeather } = require("./codechef/goodWeather")
 const { lazyChef } = require("./codechef/lazyChef")
 const { findDirection } = require("./codechef/findDirection")
 const { puppyAndSum } = require("./codechef/puppyAndSum")
-const { vaccineDates } = require("./codechef/vaccineDates")
+const { vaccineDates } = require("./codechef/vaccineDates");
+const { compareTriplet } = require("./hackerrank/compareTriplets");
 
 let testCase = Number(question(`Please enter number of testcases to run: `))
 
@@ -18,5 +19,7 @@ while (testCase--) {
     findDirection()
     puppyAndSum()
     vaccineDates()
+    compareTriplet()
+
 }
 
