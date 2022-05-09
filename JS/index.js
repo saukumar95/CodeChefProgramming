@@ -8,6 +8,7 @@ const { findDirection } = require("./codechef/findDirection")
 const { puppyAndSum } = require("./codechef/puppyAndSum")
 const { vaccineDates } = require("./codechef/vaccineDates");
 const { compareTriplet } = require("./hackerrank/compareTriplets");
+const { diagonalDifference } = require("./hackerrank/diagonalDifference");
 
 let testCase = Number(question(`Please enter number of testcases to run: `))
 
@@ -20,6 +21,7 @@ while (testCase--) {
     puppyAndSum()
     vaccineDates()
     compareTriplet()
+    diagonalDifference()
 
 }
 
