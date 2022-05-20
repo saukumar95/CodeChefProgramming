@@ -9,6 +9,8 @@ const { puppyAndSum } = require("./codechef/puppyAndSum")
 const { vaccineDates } = require("./codechef/vaccineDates");
 const { compareTriplet } = require("./hackerrank/compareTriplets");
 const { diagonalDifference } = require("./hackerrank/diagonalDifference");
+const { stairCasePrint } = require("./hackerrank/staircaseProblem");
+const { sumOfArrayOfArray } = require("./codechef/sumOfArrayOfArray");
 
 let testCase = Number(question(`Please enter number of testcases to run: `))
 
@@ -22,6 +24,7 @@ while (testCase--) {
     vaccineDates()
     compareTriplet()
     diagonalDifference()
-
+    stairCasePrint()
+    sumOfArrayOfArray()
 }
 
